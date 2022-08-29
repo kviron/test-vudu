@@ -5,19 +5,20 @@
         <a-input-search placeholder="Поиск..." />
       </a-col>
     </a-row>
-    <post-list :list="postList" class="list" :gutter="[16,16]"></post-list>
+    <post-list :list="postList" :users="userList" class="list" :gutter="[16,16]"></post-list>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 import '../assets/main.scss'
 
 export default Vue.extend({
   name: 'IndexPage',
   computed: {
-    postList () { return this.$store.getters["Posts/postList"] }
+    postList () { return this.$store.getters["Posts/postList"] },
+    userList () { return this.$store.getters["Users/userList"] }
   },
   methods: {
     ...mapActions([

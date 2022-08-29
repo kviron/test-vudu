@@ -1,5 +1,4 @@
 import useFetch from "~/hooks/useFetch";
-
 const {fetchApi} = useFetch()
 
 export interface PostInterface {
